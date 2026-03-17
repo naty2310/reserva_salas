@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Salas - Ed & Alunos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        body { padding: 20px; }
+        .status-ok { color: green; font-weight: bold; }
+        .status-erro { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul><li><strong>📍 Monitor de Salas</strong></li></ul>
+        <ul><li>Portaria & Alunos</li></ul>
+    </nav>
+
+    <main class="container">
+        <table role="grid">
+            <thead>
+                <tr>
+                    <th>Sala</th>
+                    <th>Bloco</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="lista-salas">
+                </tbody>
+        </table>
+    </main>
+
+    <script>
+        // CONFIGURAÇÃO DO SUPABASE (VAMOS PREENCHER JÁ JÁ)
+        const SB_URL = "SUA_URL_AQUI";
+        const SB_KEY = "SUA_CHAVE_AQUI";
+        
+        const supabase = supabase.createClient(SB_URL, SB_KEY);
+
+        async function carregarSalas() {
+            const { data, error } = await supabase.from('salas').select('*');
+            if (error) console.log('Erro:', error);
+            
+            const tabela = document.getElementById('lista-salas');
+            tabela.innerHTML = data.map(sala => `
+                <tr>
+                    <td>${sala.nome}</td>
+                    <td>${sala.bloco}</td>
+                    <td class="${sala.esta_funcional ? 'status-ok' : 'status-erro'}">
+                        ${sala.esta_funcional ? 'Disponível' : 'Manutenção'}
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        carregarSalas();
+    </script>
+</body>
+</html>
