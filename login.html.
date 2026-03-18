@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - App de Salas</title>
+    
+    <style>
+        /* 1. O Fundo Colorido */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;    /* Centraliza na vertical */
+            justify-content: center; /* Centraliza na horizontal */
+            height: 100vh;           /* Usa a altura toda da tela */
+            background-color: #f1d643; /* O amarelo da sua foto */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* 2. O Cartão Branco de Login */
+        .login-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px; /* Bordas arredondadas */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra suave */
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+        }
+
+        h2 { color: #333; margin-bottom: 30px; }
+
+        /* 3. Estilo dos Campos (RG e Senha) */
+        .input-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        label { display: block; font-weight: bold; margin-bottom: 5px; color: #555; }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
+        }
+
+        /* 4. O Botão Colorido */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #7c8cfc; /* Aquele roxo/azul suave */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover { background-color: #6a79e6; }
+
+        .footer-text { margin-top: 20px; font-size: 14px; color: #777; }
+        .footer-text a { color: #7c8cfc; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>Login</h2>
+        
+        <div class="input-group">
+            <label>RG:</label>
+            <input type="text" placeholder="Digite seu RG">
+        </div>
+
+        <div class="input-group">
+            <label>Senha:</label>
+            <input type="password" placeholder="Digite sua senha">
+        </div>
+
+        <button onclick="verificarLogin()">Entrar</button>
+
+        <div class="footer-text">
+            Não tem conta? <a href="#">Cadastre-se</a>
+        </div>
+    </div>
+
+</body>
+</html>
