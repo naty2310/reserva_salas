@@ -3,90 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - App de Salas</title>
+    <title>Login | Sistema de Reservas</title>
     
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
-        /* 1. O Fundo Colorido */
+        /* 1. Fundo da Tela */
         body {
             margin: 0;
-            padding: 0;
             display: flex;
-            align-items: center;    /* Centraliza na vertical */
-            justify-content: center; /* Centraliza na horizontal */
-            height: 100vh;           /* Usa a altura toda da tela */
-            background-color: #f1d643;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f1d643; /* Amarelo vibrante */
+            font-family: 'Inter', sans-serif;
         }
 
-        /* 2. O Cartão Branco de Login */
-        .login-card {
-            background: white;
+        /* 2. O Cartão de Login */
+        .card-login {
+            background: #ffffff;
             padding: 40px;
-            border-radius: 15px; /* Bordas arredondadas */
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra suave */
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             width: 100%;
-            max-width: 350px;
+            max-width: 380px;
             text-align: center;
         }
 
-        h2 { color: #333; margin-bottom: 30px; }
+        h2 { color: #333; margin-bottom: 30px; font-weight: 600; }
 
-        /* 3. Estilo dos Campos (RG e Senha) */
-        .input-group {
+        /* 3. Campos de Entrada */
+        .campo {
             text-align: left;
             margin-bottom: 20px;
         }
 
-        label { display: block; font-weight: bold; margin-bottom: 5px; color: #555; }
+        label { display: block; margin-bottom: 8px; color: #666; font-weight: 600; }
 
         input {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
+            padding: 14px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
         }
 
-        /* 4. O Botão Colorido */
+        input:focus { border-color: #7c8cfc; }
+
+        /* 4. Botão Entrar */
         button {
             width: 100%;
-            padding: 12px;
-            background-color: #7c8cfc; /* Aquele roxo/azul suave */
+            padding: 14px;
+            background-color: #7c8cfc; /* Roxo/Azul do botão */
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
-            transition: 0.3s;
+            margin-top: 10px;
         }
 
         button:hover { background-color: #6a79e6; }
 
-        .footer-text { margin-top: 20px; font-size: 14px; color: #777; }
-        .footer-text a { color: #7c8cfc; text-decoration: none; }
+        .footer { margin-top: 20px; font-size: 14px; color: #888; }
+        .footer a { color: #7c8cfc; text-decoration: none; font-weight: 600; }
     </style>
 </head>
 <body>
 
-    <div class="login-card">
-        <h2>Login</h2>
+    <div class="card-login">
+        <h2>Entrar no Sistema</h2>
         
-        <div class="input-group">
-            <label>RG:</label>
-            <input type="text" placeholder="Digite seu RG">
+        <div class="campo">
+            <label>Usuário ou RG</label>
+            <input type="text" placeholder="Digite seu acesso">
         </div>
 
-        <div class="input-group">
-            <label>Senha:</label>
-            <input type="password" placeholder="Digite sua senha">
+        <div class="campo">
+            <label>Senha</label>
+            <input type="password" placeholder="••••••••">
         </div>
 
-        <button onclick="verificarLogin()">Entrar</button>
+        <button onclick="fazerLogin()">Acessar Painel</button>
 
-        <div class="footer-text">
-            Não tem conta? <a href="#">Cadastre-se</a>
+        <div class="footer">
+            Problemas no acesso? <a href="#">Fale com a Gestão</a>
         </div>
     </div>
 
+    <script>
+        function fazerLogin() {
+            // Aqui é onde você avisa a equipe: "O login funcionou!"
+            alert("Login realizado com sucesso! Redirecionando...");
+            // Exemplo de redirecionamento para a página principal do grupo:
+            // window.location.href = "index.html"; 
+        }
+    </script>
 </body>
 </html>
+ 
