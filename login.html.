@@ -14,7 +14,7 @@
             align-items: center;    /* Centraliza na vertical */
             justify-content: center; /* Centraliza na horizontal */
             height: 100vh;           /* Usa a altura toda da tela */
-            background-color: #f1d643; /* O amarelo da sua foto */
+            background-color: #f1d643; /* amarelo */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
