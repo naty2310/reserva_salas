@@ -8,16 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-    /* 1. Fundo da Tela com Efeito Espiral */
+    /* 1. Fundo da Tela */
     body {
         margin: 0;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
-        background-color: #f1d643; /* Amarelo de fundo */
-        
-        /* ADICIONANDO O ESPIRAL AZUL */
+        background-color: #f1d643;
         background-image: 
             radial-gradient(circle at center, rgba(124, 140, 252, 0.2) 0%, rgba(124, 140, 252, 0.2) 20%, transparent 20%),
             radial-gradient(circle at center, rgba(124, 140, 252, 0.2) 0%, rgba(124, 140, 252, 0.2) 40%, transparent 40%),
@@ -25,26 +23,26 @@
         background-size: 100px 100px; 
         background-position: 0 0, 50px 50px, 100px 100px; 
         animation: moveEspiral 20s linear infinite; 
-
         font-family: 'Inter', sans-serif;
+        overflow: hidden; /* Evita barras de rolagem no celular */
     }
 
-    /* Animação para o espiral girar */
     @keyframes moveEspiral {
         from { background-position: 0 0, 50px 50px, 100px 100px; }
         to { background-position: 100px 100px, 150px 150px, 200px 200px; }
     }
 
-    /* 2. O Cartão de Login (Mantendo o que estava na foto) */
+    /* 2. O Cartão de Login */
     .card-login {
         background: #ffffff;
         padding: 40px;
         border-radius: 10px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        z-index: 1; /* Garante que o card fique acima do fundo */
+        z-index: 1;
+        width: 90%; /* Ajuste para telas de celular */
+        max-width: 400px;
     }
 </style>
-        
         
         
 
