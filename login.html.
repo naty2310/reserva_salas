@@ -14,7 +14,7 @@
             align-items: center;    /* Centraliza na vertical */
             justify-content: center; /* Centraliza na horizontal */
             height: 100vh;           /* Usa a altura toda da tela */
-            background-color: #f1d643; /* yellon */
+            background-color: #f1d643;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
