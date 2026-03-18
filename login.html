@@ -15,6 +15,31 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            background-color: #f1d643; /* Amarelo de fundo */
+            
+            /* ADICIONANDO O ESPIRAL AZUL */
+            background-image: 
+                radial-gradient(circle at center, rgba(124, 140, 252, 0.2) 0%, rgba(124, 140, 252, 0.2) 20%, transparent 20%),
+                radial-gradient(circle at center, rgba(124, 140, 252, 0.2) 0%, rgba(124, 140, 252, 0.2) 40%, transparent 40%),
+                radial-gradient(circle at center, rgba(124, 140, 252, 0.2) 0%, rgba(124, 140, 252, 0.2) 60%, transparent 60%);
+            background-size: 100px 100px; /* Tamanho do espiral */
+            background-position: 0 0, 50px 50px, 100px 100px; /* Posição para criar o efeito */
+            animation: moveEspiral 20s linear infinite; /* Animação opcional para girar suavemente */
+
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Animação para o espiral girar suavemente (Opcional) */
+        @keyframes moveEspiral {
+            from { background-position: 0 0, 50px 50px, 100px 100px; }
+            to { background-position: 100px 100px, 150px 150px, 200px 200px; }
+        } */
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             background-color: #f1d643; /* Amarelo vibrante */
             font-family: 'Inter', sans-serif;
         }
