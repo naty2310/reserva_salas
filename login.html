@@ -7,127 +7,41 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-<style>
-    /* 1. Fundo da Tela */
-    body {
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        background-color: #f1d643;
-        background-image: 
-            radial-gradient(circle at center, rgba(124, 140, 252, 0.2) 0%, rgba(124, 140, 252, 0.2) 20%, transparent 20%),
-            radial-gradient(circle at center, rgba(124, 140, 252, 0.2) 0%, rgba(124, 140, 252, 0.2) 40%, transparent 40%),
-            radial-gradient(circle at center, rgba(124, 140, 252, 0.2) 0%, rgba(124, 140, 252, 0.2) 60%, transparent 60%);
-        background-size: 100px 100px; 
-        background-position: 0 0, 50px 50px, 100px 100px; 
-        animation: moveEspiral 20s linear infinite; 
-        font-family: 'Inter', sans-serif;
-        overflow: hidden; /* Evita barras de rolagem no celular */
-    }
+    <style>
+        /* 1. CONFIGURAÇÃO DO FUNDO */
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f1d643;
+            background-image: 
+                radial-gradient(circle at center, rgba(124, 140, 252, 0.2) 0%, rgba(124, 140, 252, 0.2) 20%, transparent 20%),
+                radial-gradient(circle at center, rgba(124, 140, 252, 0.2) 0%, rgba(124, 140, 252, 0.2) 40%, transparent 40%),
+                radial-gradient(circle at center, rgba(124, 140, 252, 0.2) 0%, rgba(124, 140, 252, 0.2) 60%, transparent 60%);
+            background-size: 100px 100px; 
+            background-position: 0 0, 50px 50px, 100px 100px; 
+            animation: moveEspiral 20s linear infinite; 
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
 
-    @keyframes moveEspiral {
-        from { background-position: 0 0, 50px 50px, 100px 100px; }
-        to { background-position: 100px 100px, 150px 150px, 200px 200px; }
-    }
+        @keyframes moveEspiral {
+            from { background-position: 0 0, 50px 50px, 100px 100px; }
+            to { background-position: 100px 100px, 150px 150px, 200px 200px; }
+        }
 
-    /* 2. O Cartão de Login */
-    .card-login {
-        background: #ffffff;
-        padding: 40px;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        z-index: 1;
-        width: 90%; /* Ajuste para telas de celular */
-        max-width: 400px;
-    }
-</style>
-        
-        
-
-        /* 2. O Cartão de Login */
+        /* 2. O CARTÃO DE LOGIN */
         .card-login {
             background: #ffffff;
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 380px;
-            text-align: center;
-        }
-
-        h2 { color: #333; margin-bottom: 30px; font-weight: 600; }
-
-        /* 3. Campos de Entrada */
-        .campo {
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        label { display: block; margin-bottom: 8px; color: #666; font-weight: 600; }
-
-        input {
-            width: 100%;
-            padding: 14px;
-            border: 2px solid #eee;
             border-radius: 10px;
-            outline: none;
-            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 10;
+            width: 90%;
+            max-width: 350px;
+            position: relative;
         }
-
-        input:focus { border-color: #7c8cfc; }
-
-        /* 4. Botão Entrar */
-        button {
-            width: 100%;
-            padding: 14px;
-            background-color: #7c8cfc; /* Roxo/Azul do botão */
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        button:hover { background-color: #6a79e6; }
-
-        .footer { margin-top: 20px; font-size: 14px; color: #888; }
-        .footer a { color: #7c8cfc; text-decoration: none; font-weight: 600; }
     </style>
 </head>
-<body>
-
-    <div class="card-login">
-        <h2>Entrar no Sistema</h2>
-        
-        <div class="campo">
-            <label>Usuário ou RG</label>
-            <input type="text" placeholder="Digite seu acesso">
-        </div>
-
-        <div class="campo">
-            <label>Senha</label>
-            <input type="password" placeholder="••••••••">
-        </div>
-
-        <button onclick="fazerLogin()">Acessar Painel</button>
-
-        <div class="footer">
-            Problemas no acesso? <a href="#">Fale com a Gestão</a>
-        </div>
-    </div>
-
-    <script>
-        function fazerLogin() {
-            // Aqui é onde você avisa a equipe: "O login funcionou!"
-            alert("Login realizado com sucesso! Redirecionando...");
-            // Exemplo de redirecionamento para a página principal do grupo:
-            // window.location.href = "index.html"; 
-        }
-    </script>
-</body>
-</html>
- 
